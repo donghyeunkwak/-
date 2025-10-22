@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>개인정보처리방침 | 백송홀딩스</title>
+  <meta name="description" content="백송홀딩스 개인정보 처리방침" />
+  <meta property="og:title" content="개인정보처리방침 | 백송홀딩스" />
+  <meta property="og:description" content="백송홀딩스 개인정보 처리방침" />
+  <meta property="og:image" content="/og.jpg" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+  <style>
+    :root{ --brand:#0078ff; --brand2:#00c2b8; --text:#121212 }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Pretendard,system-ui,-apple-system,Segoe UI,Roboto,Noto Sans KR,Apple SD Gothic Neo,sans-serif;color:var(--text);background:#fff}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{opacity:.9}
+    header{position:sticky;top:0;z-index:10;background:#fffcc0; background:#fff; border-bottom:1px solid rgba(0,0,0,.06)}
+    .wrap{max-width:980px;margin:0 auto;padding:0 20px}
+    .hbar{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .logo{font-weight:800;letter-spacing:.2px;color:var(--brand)}
+    main{padding:40px 0 72px}
+    h1{font-size:30px;margin:12px 0 24px}
+    .meta{color:#666;font-size:14px;margin-bottom:20px}
+    nav.toc{background:#f8fafc;border:1px solid rgba(0,0,0,.06);border-radius:12px;padding:16px;margin:12px 0 28px}
+    nav.toc strong{display:block;margin-bottom:8px}
+    nav.toc ul{margin:0;padding-left:18px}
+    section{margin:28px 0}
+    section h2{font-size:20px;margin:0 0 10px}
+    section p, section li{line-height:1.75}
+    code.inline{background:#f1f5f9;padding:0 6px;border-radius:6px;font-size:90%}
+    table{width:100%;border-collapse:collapse;margin:12px 0;border:1px solid #eee}
+    th,td{padding:10px;border-bottom:1px solid #eee;text-align:left;vertical-align:top}
+    th{background:#fafafa}
+    footer{border-top:1px solid rgba(0,0,0,.08);padding:24px 0 60px;color:#666;font-size:14px}
+    .badge{display:inline-block;font-size:12px;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;border-radius:999px;padding:4px 10px;margin-right:8px}
+    .back{float:right;font-size:14px;margin-top:6px}
+  
+     /* Header */
+    header{position:sticky;top:0;z-index:50;backdrop-filter:saturate(120%) blur(10px);background:rgba(255,255,255,.9);border-bottom:1px solid rgba(0,0,0,.05)}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:grid;place-items:center;font-weight:800;color:#fff}
+    .brand b{letter-spacing:.2px}
+    .menu{display:flex;gap:22px;align-items:center}
+    .menu a{opacity:.8}
+    .menu a:hover{opacity:1;color:var(--brand)}
+    .cta{padding:10px 16px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;font-weight:700}
+    .hamburger{display:none;width:36px;height:36px;border:1px solid rgba(0,0,0,.1);border-radius:10px;align-items:center;justify-content:center}
+
+    /* Hero */
+    .hero{position:relative;background:linear-gradient(135deg,#e8f3ff,#f3fdfb)}
+    .hero-wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;padding:96px 0}
+    .eyebrow{display:inline-block;padding:6px 12px;border:1px solid rgba(0,0,0,.1);border-radius:999px;font-size:12px;color:var(--muted)}
+    h1{font-size:48px;line-height:1.12;margin:16px 0 10px}
+    .lead{font-size:18px;color:var(--muted);max-width:52ch}
+    .hero-cta{display:flex;gap:12px;margin-top:28px}
+    .btn{padding:12px 18px;border-radius:12px;border:1px solid rgba(0,0,0,.1);font-weight:700;background:#fff}
+    .btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;border:none}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
+    .stat{background:rgba(255,255,255,.8);border:1px solid rgba(0,0,0,.05);padding:14px 16px;border-radius:14px;text-align:center}
+    .stat b{font-size:22px;color:var(--brand)}
+
+    .hero-img{position:relative;border-radius:18px;overflow:hidden;border:1px solid rgba(0,0,0,.1);box-shadow:0 10px 30px rgba(0,0,0,.1)}
+    .hero-img .ph{aspect-ratio:4/3;background:linear-gradient(135deg,#eaf4ff,#f6fffb);display:grid;place-items:center}
+
+    section{padding:80px 0;border-top:1px solid rgba(0,0,0,.05)}
+    .section-h{display:flex;align-items:end;justify-content:space-between;margin-bottom:28px}
+    .section-h h2{font-size:28px;margin:0}
+    .section-h p{color:var(--muted);max-width:60ch}
+
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .card{background:var(--panel);border:1px solid rgba(0,0,0,.05);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:8px;box-shadow:0 2px 6px rgba(0,0,0,.05)}
+    .card small{color:var(--muted)}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .tile{position:relative;border-radius:14px;overflow:hidden;border:1px solid rgba(0,0,0,.05)}
+    .tile .ph{aspect-ratio:4/3;background:linear-gradient(135deg,#edf6ff,#f8fdfa)}
+    .tile .caption{position:absolute;left:10px;bottom:10px;background:rgba(255,255,255,.9);padding:6px 10px;border-radius:10px;font-size:12px;color:var(--text)}
+
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:16px}
+    .step{padding:18px;border:1px dashed rgba(0,0,0,.15);border-radius:14px;background:#fff}
+    .step h4{margin:0 0 6px;color:var(--brand)}
+
+    footer{border-top:1px solid rgba(0,0,0,.05);padding:28px 0;color:var(--muted);background:#fafafa;text-align:center}
+
+    /* 추가: 전환 강화 컴포넌트 */
+    .sticky-cta{position:fixed;left:0;right:0;bottom:0;display:flex;gap:8px;padding:10px;backdrop-filter:blur(8px);background:rgba(255,255,255,.9);border-top:1px solid rgba(0,0,0,.06);z-index:60}
+    .sticky-cta a{flex:1;text-align:center;padding:12px 0;border-radius:10px;border:1px solid rgba(0,0,0,.08)}
+    .sticky-cta a:first-child{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;border:none}
+    @media(min-width:768px){.sticky-cta{display:none}}
+
+    .before-after{position:relative;max-width:100%;aspect-ratio:4/3;overflow:hidden;border-radius:14px;border:1px solid rgba(0,0,0,.05)}
+    .before-after img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .before-after img.before{clip-path:inset(0 50% 0 0)}
+    .before-after input[type=range]{position:absolute;left:0;right:0;bottom:10px;margin:auto;width:60%}
+
+    #pricing table{width:100%;border-collapse:collapse}
+    #pricing th,#pricing td{border:1px solid rgba(0,0,0,.08);padding:10px}
+    #pricing th{background:#f7f9fb;text-align:left}
+
+    #faq details{border:1px solid rgba(0,0,0,.08);border-radius:10px;padding:12px;margin-bottom:8px;background:#fff}
+
+    /* Responsive */
+    @media (max-width: 1024px){
+      .hero-wrap{grid-template-columns:1fr;gap:24px;padding:64px 0}
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .cards{grid-template-columns:repeat(2,1fr)}
+      .steps{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width: 640px){
+      h1{font-size:36px}
+      .menu{display:none}
+      .hamburger{display:flex}
+      .grid, .cards, .steps{grid-template-columns:1fr}
+    }
+    /* Portfolio hover & Lightbox styles */
+    .tile{transition:transform .32s ease, box-shadow .32s ease}
+    .tile:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.12)}
+    .tile::before{content:"";position:absolute;inset:0;border-radius:14px;padding:1px;background:linear-gradient(135deg,rgba(0,120,255,.35),rgba(0,194,184,.35));-webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:.0;transition:opacity .32s ease}
+    .tile:hover::before{opacity:1}
+
+    /* Lightbox */
+    .lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.6);backdrop-filter:blur(6px);z-index:80}
+    .lightbox.open{display:flex}
+    .lightbox-inner{position:relative;max-width:min(92vw,1200px);max-height:88vh;border-radius:16px;overflow:hidden;background:#000}
+    .lightbox img{display:block;max-width:100%;max-height:88vh;width:auto;height:auto}
+    .lightbox .lb-caption{position:absolute;left:0;right:0;bottom:0;color:#fff;background:linear-gradient(180deg,rgba(0,0,0,0) 0,rgba(0,0,0,.6) 60%,rgba(0,0,0,.75) 100%);padding:14px 18px;font-size:14px}
+    .lightbox .lb-close{position:absolute;top:10px;right:10px;border:none;border-radius:10px;padding:8px 10px;background:rgba(255,255,255,.1);color:#fff;cursor:pointer}
+    .lightbox .lb-nav{position:absolute;top:50%;left:0;right:0;display:flex;justify-content:space-between;transform:translateY(-50%);pointer-events:none}
+    .lightbox .lb-nav button{pointer-events:auto;border:none;border-radius:10px;background:rgba(255,255,255,.12);color:#fff;padding:10px 12px;margin:0 6px;cursor:pointer}
+    /* Hero video & parallax */
+    .hero{position:relative;overflow:hidden}
+    .hero .hero-video{position:absolute;inset:0;z-index:0;pointer-events:none}
+    .hero .hero-video::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.35),rgba(255,255,255,.85))}
+    .hero video{width:100%;height:100%;object-fit:cover}
+    .hero .container{position:relative;z-index:1}
+
+    /* SVG motion line */
+    .motion-line{position:absolute;left:0;right:0;bottom:-1px;height:120px;z-index:1}
+    .motion-line path{stroke:url(#grad);stroke-width:2;fill:none;stroke-dasharray:6 8;animation:dash 2.4s linear infinite}
+    @keyframes dash{to{stroke-dashoffset:-140}}
+
+    /* Testimonials slider */
+    #testimonials .slider{position:relative;overflow:hidden;border-radius:16px;border:1px solid rgba(0,0,0,.06);background:#fff}
+    #testimonials .slides{display:flex;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+    #testimonials .slide{min-width:100%;padding:18px;display:grid;grid-template-columns:140px 1fr;gap:16px;align-items:center}
+    #testimonials .slide img{width:140px;height:140px;object-fit:cover;border-radius:12px}
+    #testimonials .stars{letter-spacing:2px;color:#ffaa00}
+    #testimonials .ctrl{display:flex;gap:8px;position:absolute;right:10px;bottom:10px}
+    #testimonials .ctrl button{border:1px solid rgba(0,0,0,.1);background:#fff;border-radius:10px;padding:8px 10px}
+
+    /* Partners ticker */
+    #partners .ticker{display:flex;gap:28px;overflow:hidden;mask-image:linear-gradient(to right,transparent, #000 10%, #000 90%, transparent)}
+    #partners .track{display:flex;gap:28px;animation:ticker 24s linear infinite}
+    #partners img{height:40px;opacity:.8;filter:grayscale(100%)}
+    @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+    /* Floating CTA */
+    #floatCTA{position:fixed;right:16px;bottom:86px;z-index:70;display:flex;flex-direction:column;gap:10px}
+    #floatCTA .fab{display:flex;align-items:center;gap:8px;padding:12px 14px;border-radius:999px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;border:none;box-shadow:0 10px 24px rgba(0,0,0,.18);cursor:pointer}
+    #floatCTA .fab.secondary{background:#fff;color:var(--text);border:1px solid rgba(0,0,0,.08)}
+
+    /* Toast */
+    #toast{position:fixed;left:50%;bottom:120px;transform:translateX(-50%);background:rgba(0,0,0,.8);color:#fff;padding:10px 14px;border-radius:10px;display:none;z-index:90}
+
+    /* Brand underline */
+    .u-line{background:linear-gradient(90deg,transparent,transparent 40%, rgba(0,120,255,.35) 60%, transparent 80%);background-size:200% 8px;background-repeat:no-repeat;background-position:0 100%;transition:background-position .6s}
+    .u-line:hover{background-position:100% 100%}
+
+    /* Mouse parallax hover */
+    .parallax-tilt{transition:transform .12s ease;transform-style:preserve-3d}
+    .parallax-tilt:hover{will-change:transform}
+
+    /* ===== Visual polish ===== */
+    /* Noise overlay */
+    .noise{position:fixed;inset:-20px;z-index:0;pointer-events:none;background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 140 140"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/></filter><rect width="140" height="140" filter="url(%23n)" opacity=".025"/></svg>');opacity:.7}
+
+    /* Header shadow on scroll */
+    header.scrolled{box-shadow:0 6px 18px rgba(0,0,0,.06)}
+
+    /* Card glass effect */
+    .card{backdrop-filter:saturate(120%) blur(2px)}
+
+    /* Buttons micro-interaction */
+    .btn{position:relative;overflow:hidden}
+    .btn::after{content:"";position:absolute;inset:0;transform:translateX(-120%);background:linear-gradient(90deg,transparent 0,rgba(255,255,255,.45) 50%,transparent 100%);transition:transform .6s ease}
+    .btn:hover::after{transform:translateX(120%)}
+    .btn:active{transform:translateY(1px)}
+
+    /* Gradient blobs */
+    .blobs{position:absolute;inset:-10% -10% auto -10%;height:60vh;z-index:0;pointer-events:none;filter:blur(40px);opacity:.55}
+    .blob{position:absolute;width:38vw;max-width:520px;aspect-ratio:1/1;border-radius:50%}
+    .blob.b1{left:5%;top:0;background:radial-gradient(closest-side, rgba(0,120,255,.35), transparent 70%)}
+    .blob.b2{right:0;top:10%;background:radial-gradient(closest-side, rgba(0,194,184,.35), transparent 70%)}
+
+    /* Fancy section headings */
+    .section-h h2{position:relative}
+    .section-h h2::after{content:"";position:absolute;left:0;bottom:-8px;width:84px;height:4px;border-radius:999px;background:linear-gradient(90deg,#0078ff,#00c2b8)}
+
+    /* Prefer reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      *, *::before, *::after{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important}
+      .motion-line path{animation:none}
+    }
+    /* ===== Visual polish (추가 동적 효과) ===== */
+    /* Scroll progress bar */
+    #scrollbar{position:fixed;left:0;top:0;height:3px;width:0;z-index:90;background:linear-gradient(90deg,#0078ff,#00c2b8)}
+
+    /* Cursor spotlight */
+    #spotlight{position:fixed;inset:0;pointer-events:none;z-index:1;background:radial-gradient(220px 220px at 50% 20%, rgba(255,255,255,.35), transparent 70%);mix-blend-mode:soft-light;opacity:.0;transition:opacity .3s}
+    .hero:hover ~ #spotlight{opacity:1}
+
+    /* Animated gradients on brand surfaces */
+    .logo, .btn.primary, .cta, .sticky-cta a:first-child, #floatCTA .fab{background-size:200% 200%;animation:gradmove 8s ease infinite}
+    @keyframes gradmove{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+
+    /* Magnetic buttons (visual hint) */
+    .magnetic{will-change:transform}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "개인정보처리방침",
+    "url": "https://example.com/privacy.html",
+    "about": {
+      "@type": "Organization",
+      "name": "백송홀딩스"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="wrap hbar">
+      <div class="logo">BAEKSONG HOLDINGS</div>
+      <a class="back" href="index.html">← 홈페이지로 돌아가기</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <span class="badge">정책</span>
+    <h1>개인정보처리방침</h1>
+    <div class="meta">시행일: <time datetime="2025-10-22">2025-10-22</time> · 최종 업데이트: <time datetime="2025-10-22">2025-10-22</time></div>
+
+    <p>백송홀딩스(이하 “회사”)는 「개인정보 보호법」, 「정보통신망 이용촉진 및 정보보호 등에 관한 법률」 등 관계 법령을 준수하며, 고객의 개인정보를 소중하게 보호합니다. 본 처리방침은 회사가 제공하는 웹사이트 및 상담 서비스에 적용됩니다.</p>
+
+    <nav class="toc" aria-label="목차">
+      <strong>목차</strong>
+      <ul>
+        <li><a href="#collect">1. 수집하는 개인정보 항목</a></li>
+        <li><a href="#use">2. 개인정보의 이용 목적</a></li>
+        <li><a href="#share">3. 제3자 제공 및 처리업무 위탁</a></li>
+        <li><a href="#retain">4. 보유 및 이용기간</a></li>
+        <li><a href="#rights">5. 이용자 및 법정대리인의 권리</a></li>
+        <li><a href="#cookies">6. 쿠키 및 유사기술</a></li>
+        <li><a href="#security">7. 개인정보의 안전성 확보 조치</a></li>
+        <li><a href="#xfer">8. 국외 이전</a></li>
+        <li><a href="#child">9. 아동의 개인정보</a></li>
+        <li><a href="#notice">10. 고지의 의무</a></li>
+        <li><a href="#contact">11. 개인정보 보호책임자 및 문의처</a></li>
+      </ul>
+    </nav>
+
+    <section id="collect">
+      <h2>1. 수집하는 개인정보 항목</h2>
+      <p>회사는 서비스 제공을 위해 다음의 개인정보를 수집할 수 있습니다.</p>
+      <table aria-label="수집 항목">
+        <thead><tr><th>구분</th><th>수집 항목</th><th>수집 방법</th></tr></thead>
+        <tbody>
+          <tr><td>상담/견적</td><td>이름, 연락처(휴대전화/전화), 주소(현장 주소), 희망 예산·기간, 문의 내용, 첨부 이미지(선택)</td><td>웹 상담 폼, 전화, 메신저(카카오톡 채널 등)</td></tr>
+          <tr><td>웹사이트 이용</td><td>쿠키, 접속 IP, 브라우저·OS 정보, 방문 일시, 서비스 이용기록</td><td>자동 수집(쿠키·스크립트)</td></tr>
+          <tr><td>계약/정산</td><td>계약서 정보, 세금계산서 발행 정보(사업자/청구지), 계좌 정보</td><td>오프라인/전자 문서</td></tr>
+        </tbody>
+      </table>
+      <p>민감정보(건강정보 등)는 원칙적으로 수집하지 않으며, 불가피하게 필요한 경우에는 별도의 동의를 받습니다.</p>
+    </section>
+
+    <section id="use">
+      <h2>2. 개인정보의 이용 목적</h2>
+      <ul>
+        <li>상담 요청 처리, 현장 실사·견적 산출, 계약 체결 및 이행</li>
+        <li>시공 진행 상황 안내, 고객 문의 대응, A/S 처리</li>
+        <li>서비스 품질 개선, 통계·분석, 부정 이용 방지</li>
+        <li>법령 준수 및 분쟁 대응을 위한 기록 보존</li>
+        <li>(선택) 프로모션·이벤트 안내, 뉴스레터 발송 — <em>사전 동의 시</em></li>
+      </ul>
+    </section>
+
+    <section id="share">
+      <h2>3. 제3자 제공 및 처리업무 위탁</h2>
+      <p>회사는 원칙적으로 이용자의 개인정보를 외부에 제공하지 않습니다. 다만 다음의 경우 예외적으로 제공할 수 있습니다.</p>
+      <ul>
+        <li>이용자가 사전에 동의한 경우</li>
+        <li>법령에 근거가 있거나 수사목적으로 법령에 정해진 절차와 방법에 따라 요청받은 경우</li>
+      </ul>
+      <p>원활한 업무 처리를 위해 일부 업무를 외부 전문업체에 위탁할 수 있으며, 위탁 시에는 「개인정보 보호법」 제26조에 따라 수탁자 관리·감독을 수행합니다.</p>
+      <table aria-label="주요 위탁처">
+        <thead><tr><th>업무 내용</th><th>수탁자</th><th>보유·이용기간</th></tr></thead>
+        <tbody>
+          <tr><td>호스팅/인프라</td><td>국내외 클라우드/호스팅사(예: AWS, Naver Cloud 등)</td><td>위탁 계약 종료 시까지</td></tr>
+          <tr><td>고객 상담/메시지</td><td>카카오톡 채널, 이메일 서비스 제공자</td><td>위탁 계약 종료 시까지</td></tr>
+          <tr><td>웹 분석</td><td>웹 분석 도구 제공자(GA4 등) — 설치 시 고지</td><td>위탁 계약 종료 또는 이용 해지 시까지</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="retain">
+      <h2>4. 보유 및 이용기간</h2>
+      <ul>
+        <li>계약 및 대금 정산 관련 기록: 5년</li>
+        <li>소비자 불만 또는 분쟁처리 기록: 3년</li>
+        <li>표시·광고에 관한 기록: 6개월</li>
+        <li>웹사이트 방문 기록(로그): 3개월</li>
+        <li>그 외, 개별 동의 또는 법령에 따라 달리 정해진 경우 해당 기간</li>
+      </ul>
+      <p>보유기간 경과 또는 처리 목적 달성 시에는 지체 없이 파기합니다. 전자 파일은 복구 불가한 방법으로, 문서는 분쇄 또는 소각합니다.</p>
+    </section>
+
+    <section id="rights">
+      <h2>5. 이용자 및 법정대리인의 권리</h2>
+      <p>이용자는 언제든지 자신의 개인정보에 대해 열람·정정·삭제·처리정지·동의철회를 요청할 수 있습니다. 요청은 본 방침 하단의 연락처로 접수해 주세요. 만 14세 미만 아동의 경우 법정대리인이 권리를 행사할 수 있습니다.</p>
+    </section>
+
+    <section id="cookies">
+      <h2>6. 쿠키 및 유사기술</h2>
+      <p>회사는 맞춤형 서비스 제공 및 이용 통계를 위해 쿠키를 사용할 수 있습니다. 쿠키 설치를 거부하거나 삭제하려면 브라우저 설정에서 차단할 수 있습니다. 다만 일부 서비스 이용에 제한이 있을 수 있습니다.</p>
+    </section>
+
+    <section id="security">
+      <h2>7. 개인정보의 안전성 확보 조치</h2>
+      <ul>
+        <li>관리적 조치: 내부관리계획 수립·시행, 정기 교육</li>
+        <li>기술적 조치: 접근권한 관리, 암호화(전송 구간 TLS), 로그·모니터링, 악성코드 방지</li>
+        <li>물리적 조치: 사무실 접근통제, 문서 보관시설 잠금</li>
+      </ul>
+    </section>
+
+    <section id="xfer">
+      <h2>8. 국외 이전</h2>
+      <p>해외 클라우드/분석 서비스 이용 등으로 개인정보가 국외로 이전될 수 있습니다. 국외 이전이 발생하는 경우, 이전 받는 자, 국가, 이전 일시 및 방법, 보유·이용기간 등을 관련 법령에 따라 고지합니다.</p>
+    </section>
+
+    <section id="child">
+      <h2>9. 아동의 개인정보</h2>
+      <p>회사의 서비스는 원칙적으로 만 14세 미만 아동을 대상으로 하지 않습니다. 만 14세 미만으로부터 개인정보가 수집된 사실을 알게 되면 지체 없이 파기합니다.</p>
+    </section>
+
+    <section id="notice">
+      <h2>10. 고지의 의무(변경 통지)</h2>
+      <p>본 개인정보처리방침은 법령, 서비스 내용, 내부 정책의 변경에 따라 수정될 수 있습니다. 중요한 변경 사항이 있을 경우 웹사이트 공지 또는 개별 통지를 통해 고지합니다.</p>
+    </section>
+
+    <section id="contact">
+      <h2>11. 개인정보 보호책임자 및 문의처</h2>
+      <table aria-label="문의처">
+        <tbody>
+          <tr><th style="width:160px">회사명</th><td>백송홀딩스</td></tr>
+          <tr><th>주소</th><td> 성남시 분당구 장미대로 48번길 10</td></tr>
+          <tr><th>대표 전화</th><td>010-2690-9679</td></tr>
+          <tr><th>이메일</th><td><a href="cd1070k987@naver.com<">cd1070k987@naver.com</a></td></tr>
+          <tr><th>개인정보 보호책임자</th><td>곽동현(담당자) · 연락처: 010-5880-1070</td></tr>
+        </tbody>
+      </table>
+      <p>또한 개인정보 침해에 대한 신고나 상담이 필요하신 경우 다음 기관에 문의하실 수 있습니다: 개인정보침해 신고센터(118), 대검찰청 사이버수사과(1301), 경찰청 사이버범죄 신고시스템(182).</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      ⓒ <span id="year">2025</span> 백송홀딩스 · <a href="/privacy.htm">개인정보처리방침</a>
+    </div>
+  </footer>
+
+  <script>
+    // 연도 자동 갱신
+    (function(){ const y=document.getElementById('year'); if(y) y.textContent=new Date().getFullYear(); })();
+  </script>
+</body>
+</html>

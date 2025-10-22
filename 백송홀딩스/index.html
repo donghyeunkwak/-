@@ -1,0 +1,942 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>백송홀딩스 | 공간을 바꾸면 삶이 달라집니다</title>
+  <meta name="description" content="백송홀딩스 — 주거/상업 인테리어, 리모델링, 설계부터 시공·A/S까지 원스톱." />
+  <meta property="og:title" content="백송홀딩스" />
+  <meta property="og:description" content="주거·상업 인테리어 전문, 설계/시공/감리/AS 원스톱" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ko_KR" />
+  <link rel="icon" href="/favicon.ico" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+  <!-- Open Graph Image -->
+  <meta property="og:image" content="/og.jpg" />
+  <meta name="theme-color" content="#0078ff" />
+  <style>
+    :root{ --bg:#ffffff; --panel:#f7f9fb; --muted:#556171; --text:#1b1f25; --brand:#0078ff; --brand-2:#00c2b8; --max:1200px; }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Pretendard,Apple SD Gothic Neo,Noto Sans KR,Helvetica,Arial,sans-serif}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:var(--max);margin:0 auto;padding:0 20px}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:50;backdrop-filter:saturate(120%) blur(10px);background:rgba(255,255,255,.9);border-bottom:1px solid rgba(0,0,0,.05)}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:grid;place-items:center;font-weight:800;color:#fff}
+    .brand b{letter-spacing:.2px}
+    .menu{display:flex;gap:22px;align-items:center}
+    .menu a{opacity:.8}
+    .menu a:hover{opacity:1;color:var(--brand)}
+    .cta{padding:10px 16px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;font-weight:700}
+    .hamburger{display:none;width:36px;height:36px;border:1px solid rgba(0,0,0,.1);border-radius:10px;align-items:center;justify-content:center}
+
+    /* Hero */
+    .hero{position:relative;background:linear-gradient(135deg,#e8f3ff,#f3fdfb)}
+    .hero-wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;padding:96px 0}
+    .eyebrow{display:inline-block;padding:6px 12px;border:1px solid rgba(0,0,0,.1);border-radius:999px;font-size:12px;color:var(--muted)}
+    h1{font-size:48px;line-height:1.12;margin:16px 0 10px}
+    .lead{font-size:18px;color:var(--muted);max-width:52ch}
+    .hero-cta{display:flex;gap:12px;margin-top:28px}
+    .btn{padding:12px 18px;border-radius:12px;border:1px solid rgba(0,0,0,.1);font-weight:700;background:#fff}
+    .btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;border:none}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
+    .stat{background:rgba(255,255,255,.8);border:1px solid rgba(0,0,0,.05);padding:14px 16px;border-radius:14px;text-align:center}
+    .stat b{font-size:22px;color:var(--brand)}
+
+    .hero-img{position:relative;border-radius:18px;overflow:hidden;border:1px solid rgba(0,0,0,.1);box-shadow:0 10px 30px rgba(0,0,0,.1)}
+    .hero-img .ph{aspect-ratio:4/3;background:linear-gradient(135deg,#eaf4ff,#f6fffb);display:grid;place-items:center}
+
+    section{padding:80px 0;border-top:1px solid rgba(0,0,0,.05)}
+    .section-h{display:flex;align-items:end;justify-content:space-between;margin-bottom:28px}
+    .section-h h2{font-size:28px;margin:0}
+    .section-h p{color:var(--muted);max-width:60ch}
+
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .card{background:var(--panel);border:1px solid rgba(0,0,0,.05);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:8px;box-shadow:0 2px 6px rgba(0,0,0,.05)}
+    .card small{color:var(--muted)}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .tile{position:relative;border-radius:14px;overflow:hidden;border:1px solid rgba(0,0,0,.05)}
+    .tile .ph{aspect-ratio:4/3;background:linear-gradient(135deg,#edf6ff,#f8fdfa)}
+    .tile .caption{position:absolute;left:10px;bottom:10px;background:rgba(255,255,255,.9);padding:6px 10px;border-radius:10px;font-size:12px;color:var(--text)}
+
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:16px}
+    .step{padding:18px;border:1px dashed rgba(0,0,0,.15);border-radius:14px;background:#fff}
+    .step h4{margin:0 0 6px;color:var(--brand)}
+
+    footer{border-top:1px solid rgba(0,0,0,.05);padding:28px 0;color:var(--muted);background:#fafafa;text-align:center}
+
+    /* 추가: 전환 강화 컴포넌트 */
+    .sticky-cta{position:fixed;left:0;right:0;bottom:0;display:flex;gap:8px;padding:10px;backdrop-filter:blur(8px);background:rgba(255,255,255,.9);border-top:1px solid rgba(0,0,0,.06);z-index:60}
+    .sticky-cta a{flex:1;text-align:center;padding:12px 0;border-radius:10px;border:1px solid rgba(0,0,0,.08)}
+    .sticky-cta a:first-child{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;border:none}
+    @media(min-width:768px){.sticky-cta{display:none}}
+
+    .before-after{position:relative;max-width:100%;aspect-ratio:4/3;overflow:hidden;border-radius:14px;border:1px solid rgba(0,0,0,.05)}
+    .before-after img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .before-after img.before{clip-path:inset(0 50% 0 0)}
+    .before-after input[type=range]{position:absolute;left:0;right:0;bottom:10px;margin:auto;width:60%}
+
+    #pricing table{width:100%;border-collapse:collapse}
+    #pricing th,#pricing td{border:1px solid rgba(0,0,0,.08);padding:10px}
+    #pricing th{background:#f7f9fb;text-align:left}
+
+    #faq details{border:1px solid rgba(0,0,0,.08);border-radius:10px;padding:12px;margin-bottom:8px;background:#fff}
+
+    /* Responsive */
+    @media (max-width: 1024px){
+      .hero-wrap{grid-template-columns:1fr;gap:24px;padding:64px 0}
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .cards{grid-template-columns:repeat(2,1fr)}
+      .steps{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width: 640px){
+      h1{font-size:36px}
+      .menu{display:none}
+      .hamburger{display:flex}
+      .grid, .cards, .steps{grid-template-columns:1fr}
+    }
+    /* Portfolio hover & Lightbox styles */
+    .tile{transition:transform .32s ease, box-shadow .32s ease}
+    .tile:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.12)}
+    .tile::before{content:"";position:absolute;inset:0;border-radius:14px;padding:1px;background:linear-gradient(135deg,rgba(0,120,255,.35),rgba(0,194,184,.35));-webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:.0;transition:opacity .32s ease}
+    .tile:hover::before{opacity:1}
+
+    /* Lightbox */
+    .lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.6);backdrop-filter:blur(6px);z-index:80}
+    .lightbox.open{display:flex}
+    .lightbox-inner{position:relative;max-width:min(92vw,1200px);max-height:88vh;border-radius:16px;overflow:hidden;background:#000}
+    .lightbox img{display:block;max-width:100%;max-height:88vh;width:auto;height:auto}
+    .lightbox .lb-caption{position:absolute;left:0;right:0;bottom:0;color:#fff;background:linear-gradient(180deg,rgba(0,0,0,0) 0,rgba(0,0,0,.6) 60%,rgba(0,0,0,.75) 100%);padding:14px 18px;font-size:14px}
+    .lightbox .lb-close{position:absolute;top:10px;right:10px;border:none;border-radius:10px;padding:8px 10px;background:rgba(255,255,255,.1);color:#fff;cursor:pointer}
+    .lightbox .lb-nav{position:absolute;top:50%;left:0;right:0;display:flex;justify-content:space-between;transform:translateY(-50%);pointer-events:none}
+    .lightbox .lb-nav button{pointer-events:auto;border:none;border-radius:10px;background:rgba(255,255,255,.12);color:#fff;padding:10px 12px;margin:0 6px;cursor:pointer}
+    /* Hero video & parallax */
+    .hero{position:relative;overflow:hidden}
+    .hero .hero-video{position:absolute;inset:0;z-index:0;pointer-events:none}
+    .hero .hero-video::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.35),rgba(255,255,255,.85))}
+    .hero video{width:100%;height:100%;object-fit:cover}
+    .hero .container{position:relative;z-index:1}
+
+    /* SVG motion line */
+    .motion-line{position:absolute;left:0;right:0;bottom:-1px;height:120px;z-index:1}
+    .motion-line path{stroke:url(#grad);stroke-width:2;fill:none;stroke-dasharray:6 8;animation:dash 2.4s linear infinite}
+    @keyframes dash{to{stroke-dashoffset:-140}}
+
+    /* Testimonials slider */
+    #testimonials .slider{position:relative;overflow:hidden;border-radius:16px;border:1px solid rgba(0,0,0,.06);background:#fff}
+    #testimonials .slides{display:flex;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+    #testimonials .slide{min-width:100%;padding:18px;display:grid;grid-template-columns:140px 1fr;gap:16px;align-items:center}
+    #testimonials .slide img{width:140px;height:140px;object-fit:cover;border-radius:12px}
+    #testimonials .stars{letter-spacing:2px;color:#ffaa00}
+    #testimonials .ctrl{display:flex;gap:8px;position:absolute;right:10px;bottom:10px}
+    #testimonials .ctrl button{border:1px solid rgba(0,0,0,.1);background:#fff;border-radius:10px;padding:8px 10px}
+
+    /* Partners ticker */
+    #partners .ticker{display:flex;gap:28px;overflow:hidden;mask-image:linear-gradient(to right,transparent, #000 10%, #000 90%, transparent)}
+    #partners .track{display:flex;gap:28px;animation:ticker 24s linear infinite}
+    #partners img{height:40px;opacity:.8;filter:grayscale(100%)}
+    @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+    /* Floating CTA */
+    #floatCTA{position:fixed;right:16px;bottom:86px;z-index:70;display:flex;flex-direction:column;gap:10px}
+    #floatCTA .fab{display:flex;align-items:center;gap:8px;padding:12px 14px;border-radius:999px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;border:none;box-shadow:0 10px 24px rgba(0,0,0,.18);cursor:pointer}
+    #floatCTA .fab.secondary{background:#fff;color:var(--text);border:1px solid rgba(0,0,0,.08)}
+
+    /* Toast */
+    #toast{position:fixed;left:50%;bottom:120px;transform:translateX(-50%);background:rgba(0,0,0,.8);color:#fff;padding:10px 14px;border-radius:10px;display:none;z-index:90}
+
+    /* Brand underline */
+    .u-line{background:linear-gradient(90deg,transparent,transparent 40%, rgba(0,120,255,.35) 60%, transparent 80%);background-size:200% 8px;background-repeat:no-repeat;background-position:0 100%;transition:background-position .6s}
+    .u-line:hover{background-position:100% 100%}
+
+    /* Mouse parallax hover */
+    .parallax-tilt{transition:transform .12s ease;transform-style:preserve-3d}
+    .parallax-tilt:hover{will-change:transform}
+
+    /* ===== Visual polish ===== */
+    /* Noise overlay */
+    .noise{position:fixed;inset:-20px;z-index:0;pointer-events:none;background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 140 140"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/></filter><rect width="140" height="140" filter="url(%23n)" opacity=".025"/></svg>');opacity:.7}
+
+    /* Header shadow on scroll */
+    header.scrolled{box-shadow:0 6px 18px rgba(0,0,0,.06)}
+
+    /* Card glass effect */
+    .card{backdrop-filter:saturate(120%) blur(2px)}
+
+    /* Buttons micro-interaction */
+    .btn{position:relative;overflow:hidden}
+    .btn::after{content:"";position:absolute;inset:0;transform:translateX(-120%);background:linear-gradient(90deg,transparent 0,rgba(255,255,255,.45) 50%,transparent 100%);transition:transform .6s ease}
+    .btn:hover::after{transform:translateX(120%)}
+    .btn:active{transform:translateY(1px)}
+
+    /* Gradient blobs */
+    .blobs{position:absolute;inset:-10% -10% auto -10%;height:60vh;z-index:0;pointer-events:none;filter:blur(40px);opacity:.55}
+    .blob{position:absolute;width:38vw;max-width:520px;aspect-ratio:1/1;border-radius:50%}
+    .blob.b1{left:5%;top:0;background:radial-gradient(closest-side, rgba(0,120,255,.35), transparent 70%)}
+    .blob.b2{right:0;top:10%;background:radial-gradient(closest-side, rgba(0,194,184,.35), transparent 70%)}
+
+    /* Fancy section headings */
+    .section-h h2{position:relative}
+    .section-h h2::after{content:"";position:absolute;left:0;bottom:-8px;width:84px;height:4px;border-radius:999px;background:linear-gradient(90deg,#0078ff,#00c2b8)}
+
+    /* Prefer reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      *, *::before, *::after{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important}
+      .motion-line path{animation:none}
+    }
+    /* ===== Visual polish (추가 동적 효과) ===== */
+    /* Scroll progress bar */
+    #scrollbar{position:fixed;left:0;top:0;height:3px;width:0;z-index:90;background:linear-gradient(90deg,#0078ff,#00c2b8)}
+
+    /* Cursor spotlight */
+    #spotlight{position:fixed;inset:0;pointer-events:none;z-index:1;background:radial-gradient(220px 220px at 50% 20%, rgba(255,255,255,.35), transparent 70%);mix-blend-mode:soft-light;opacity:.0;transition:opacity .3s}
+    .hero:hover ~ #spotlight{opacity:1}
+
+    /* Animated gradients on brand surfaces */
+    .logo, .btn.primary, .cta, .sticky-cta a:first-child, #floatCTA .fab{background-size:200% 200%;animation:gradmove 8s ease infinite}
+    @keyframes gradmove{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+
+    /* Magnetic buttons (visual hint) */
+    .magnetic{will-change:transform}
+  
+  /* ===== Mobile-first polish (≤ 768px) ===== */
+:root{
+  --pad-x: 20px;
+}
+
+@media (max-width: 768px){
+  /* 전체 타이포/여백 */
+  body{font-size:16px; line-height:1.6}
+  header{padding:12px var(--pad-x)}
+  .logo{font-size:18px}
+  section{padding:64px var(--pad-x)}
+
+  /* 히어로(대비/크기/여백) */
+  .hero{height:64vh; text-align:left; padding:0 var(--pad-x); align-items:flex-end}
+  .hero::after{ /* 텍스트 대비를 위해 하단 그라데이션 */
+    content:""; position:absolute; inset:auto 0 0 0; height:40%;
+    background:linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.45) 100%);
+    z-index:-1;
+  }
+  .hero video{filter:brightness(55%)}
+  .hero h1{font-size: clamp(28px, 7.5vw, 38px); line-height:1.25}
+  .hero p{font-size: clamp(14px, 3.8vw, 16px)}
+
+  /* 섹션 타이틀 */
+  h2{font-size: clamp(20px, 5.6vw, 26px); margin-bottom:28px}
+  h2::after{width:72px; height:3px}
+
+  /* 그리드(1열로, 카드 여백 확대) */
+  .portfolio{grid-template-columns: 1fr; gap:16px}
+  .tile{transform:none !important} /* 터치에서 과한 3D 틸트 방지 */
+  .portfolio img{border-radius:14px}
+  .portfolio img:hover{transform: none} /* 모바일에서 hover 제거 */
+
+  /* 전/후 비교 슬라이더(터치 손잡이 크게) */
+  .before-after{position:relative}
+  .before-after input[type=range]{position:absolute; inset:auto 0 10px 0; width:100%}
+  .before-after input[type=range]{-webkit-appearance:none; height:28px; background:transparent}
+  .before-after input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none; width:28px; height:28px; border-radius:50%;
+    background: linear-gradient(135deg,#0078ff,#00c2b8); box-shadow:0 2px 8px rgba(0,0,0,.25);
+  }
+  .before-after input[type=range]::-webkit-slider-runnable-track{
+    height:4px; background:rgba(255,255,255,.8); border-radius:999px;
+  }
+
+  /* 모달 내 폼: 입력칸 터치 영역 */
+  .modal form input, .modal form textarea, .modal form button{
+    font-size:16px; /* iOS 확대 방지 */
+    min-height:44px; /* 터치 타겟 */
+  }
+
+  /* 라이트박스 네비/닫기 버튼 확대 */
+  .lightbox .lb-close{top:12px; right:12px; font-size:28px}
+  .lightbox .lb-nav button{width:44px; height:44px; font-size:22px}
+
+  /* 플로팅 CTA 크기/간격 */
+  .floating-btn{right:16px; bottom:16px; padding:14px 18px; border-radius:18px}
+
+  /* 푸터 폰트/패딩 */
+  footer{padding:36px var(--pad-x)}
+}
+
+/* 초소형 (≤ 390px) 미세 보정 */
+@media (max-width: 390px){
+  .hero{height:58vh}
+  .floating-btn{font-size:14px; padding:12px 16px}
+}
+
+  </style>
+
+  <!-- LocalBusiness 스키마 (SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"백송홀딩스",
+    "image":"https://example.com/og.jpg",
+    "telephone":"+82-2-000-0000",
+    "address":{"@type":"PostalAddress","addressLocality":"서울","addressCountry":"KR"},
+    "areaServed":"서울/수도권",
+    "url":"https://example.com",
+    "openingHours":["Mo-Fr 09:30-18:30"],
+    "sameAs":["https://pf.kakao.com/_YOURID"]
+  }
+  </script>
+</head>
+<body>
+  <!-- scroll progress bar -->
+  <div id="scrollbar" aria-hidden="true"></div>
+  <!-- visual: subtle noise overlay -->
+  <div class="noise" aria-hidden="true"></div>
+  <div id="spotlight" aria-hidden="true"></div>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#">
+        <span class="logo">白松</span>
+        <div>
+          <b>백송홀딩스</b><br />
+          <small style="color:var(--muted)">Interior & Remodeling</small>
+        </div>
+      </a>
+      <nav class="menu" aria-label="주요 메뉴">
+        <a href="#services">서비스</a>
+        <a href="#portfolio">포트폴리오</a>
+        <a href="#pricing">예산/기간</a>
+        <a href="#faq">FAQ</a>
+        <a href="#" class="cta" data-open-modal>상담하기</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="메뉴 열기" title="메뉴">☰</button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="drawer" style="display:none;position:fixed;inset:70px 0 auto 0;background:#fff;border-bottom:1px solid rgba(0,0,0,.08);z-index:40">
+    <div class="container" style="padding:14px 20px 20px;display:grid;gap:10px">
+      <a href="#services" onclick="toggleDrawer(false)">서비스</a>
+      <a href="#portfolio" onclick="toggleDrawer(false)">포트폴리오</a>
+      <a href="#pricing" onclick="toggleDrawer(false)">예산/기간</a>
+      <a href="#faq" onclick="toggleDrawer(false)">FAQ</a>
+      <a href="#" class="cta" style="display:inline-block;width:max-content" data-open-modal onclick="toggleDrawer(false)">상담하기</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero" data-parallax-speed="0.5">
+    <div class="hero-video" aria-hidden="true">
+    </div>
+    <!-- visual: gradient blobs -->
+    <div class="blobs" aria-hidden="true">
+      <span class="blob b1"></span>
+      <span class="blob b2"></span>
+    </div>
+    <div class="container hero-wrap">
+      <!-- SVG motion line at bottom of hero -->
+      <div class="motion-line" aria-hidden="true">
+        <svg width="100%" height="120" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="grad" x1="0" x2="1" y1="0" y2="0">
+              <stop offset="0%" stop-color="#0078ff"/>
+              <stop offset="100%" stop-color="#00c2b8"/>
+            </linearGradient>
+          </defs>
+          <path d="M0,90 C200,110 260,20 420,50 C580,80 700,10 860,45 C1020,80 1100,40 1200,70"/>
+        </svg>
+      </div>
+      <div>
+        <span class="eyebrow">설계·시공·감리·A/S 원스톱</span>
+        <h1>공간을 바꾸면 <br />삶이 달라집니다.</h1>
+        <p class="lead">백송홀딩스는 주거·상업 인테리어 전문 기업으로, 목적에 맞춘 설계와 꼼꼼한 시공, 그리고 투명한 커뮤니케이션으로 완성도를 높입니다.</p>
+        <div class="hero-cta">
+          <a href="#" class="btn primary" data-open-modal>빠른 상담(팝업)</a>
+          <a href="#portfolio" class="btn">시공사례 보기</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><small>고객만족도</small><br><b>4.5/5.0</b>점</div>
+          <div class="stat"><small>평균 공사기간</small><br><b>10일</b>일</div>
+          <div class="stat"><small>사후 A/S</small><br><b>1</b>년</div>
+        </div>
+      </div>
+      <div class="hero-img" aria-hidden="true">
+        <div class="ph">
+            <rect x="3" y="4" width="18" height="14" rx="2" stroke="#556171"/>
+            <path d="M3 15l4-4 6 6" stroke="#556171"/>
+            <circle cx="16.5" cy="9.5" r="1.5" fill="#556171"/>
+          </svg>
+        <img src="picture/1.JPG" alt="사무실 리뉴얼 시공 후" class="after">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <div class="section-h">
+        <h2>무엇을 도와드릴까요?</h2>
+        <p>주거/상업 모든 공간에 대해 리서치-설계-시공-사후관리까지 한 번에 책임집니다. 예산과 일정, 품질을 투명하게 관리합니다.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <h3>주거 리모델링</h3>
+          <small>아파트 · 빌라 · 주택</small>
+          <p>동선 최적화와 재료 선정으로 실사용 만족도를 높입니다.</p>
+        </article>
+        <article class="card">
+          <h3>상업공간 인테리어</h3>
+          <small>카페 · 오피스 · 리테일</small>
+          <p>브랜딩에 맞춘 콘셉트 설계로 방문 경험을 설계합니다.</p>
+        </article>
+        <article class="card">
+          <h3>설계 & 3D 모델링</h3>
+          <small>도면 · 3D · 견적</small>
+          <p>사전에 충분한 시뮬레이션으로 공사 리스크를 줄입니다.</p>
+        </article>
+        <article class="card">
+          <h3>시공 & A/S</h3>
+          <small>품질관리 · 1년 보증</small>
+          <p>현장 관리 표준과 체크리스트로 하자 없는 시공을 지향합니다.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio">
+    
+  <div class="container">
+  <div class="section-h">
+    <h2>시공 사례</h2>
+    <p>실제 백송홀딩스가 시공한 사진입니다.</p>
+  </div>
+
+  <div class="grid">
+    <div class="tile">
+      <div class="before-after">
+        <img src="picture/1.JPG" alt="사무실 리뉴얼 시공 후" class="after">
+      </div>
+      <div class="caption">사무실 리뉴얼</div>
+    </div>
+
+    <div class="tile">
+      <img src="picture/IMG_6488.JPG" alt="오피스 확장 · 판교" class="after">
+      <div class="caption">오피스 확장 · 판교</div>
+    </div>
+
+    <div class="tile">
+      <img src="picture/IMG_6489.JPG" alt="아파트 전체 리모델링 · 잠실" class="after">
+      <div class="caption">아파트 전체 리모델링 · 잠실</div>
+    </div>
+
+    <div class="tile">
+      <img src="picture/IMG_6490.JPG" alt="브랜딩 숍 · 한남" class="after">
+      <div class="caption">브랜딩 숍 · 한남</div>
+    </div>
+
+    <div class="tile">
+      <img src="picture/1.JPG" alt="키친 업그레이드 · 광진" class="after">
+      <div class="caption">키친 업그레이드 · 광진</div>
+    </div>
+
+    <div class="tile">
+      <img src="picture/1.JPG" alt="라운지 & 회의실 · 종로" class="after">
+      <div class="caption">라운지 & 회의실 · 종로</div>
+    </div>
+  </div>
+</div>
+
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="section-h"><h2 class="u-line">고객 후기</h2><p>생생한 시공 경험을 확인하세요.</p></div>
+      <div class="slider">
+        <div class="slides" id="tslides">
+          <div class="slide">
+            <img src="picture/IMG_6490.JPG" alt="리뷰1">
+            <div>
+              <div class="stars">★★★★★</div>
+              <p>“거실 동선이 완전히 달라졌어요. 일정/소통 모두 만족!”</p>
+              <small>잠실 · 아파트 32평 · 4주</small>
+            </div>
+          </div>
+          <div class="slide">
+            <img src="picture/IMG_6490.JPG" alt="리뷰2">
+            <div>
+              <div class="stars">★★★★★</div>
+              <p>“브랜드 콘셉트를 제대로 이해한 디자인과 마감.”</p>
+              <small>성수 · 카페 18평 · 3주</small>
+            </div>
+          </div>
+          <div class="slide">
+            <img src="picture/IMG_6490.JPG" alt="리뷰3">
+            <div>
+              <div class="stars">★★★★☆</div>
+              <p>“사후 A/S까지 빠르게 대응해줘서 안심됐습니다.”</p>
+              <small>판교 · 오피스 40평 · 5주</small>
+            </div>
+          </div>
+        </div>
+        <div class="ctrl">
+          <button id="tprev">이전</button>
+          <button id="tnext">다음</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners -->
+  <section id="partners">
+    <div class="container">
+      <div class="section-h"><h2 class="u-line">파트너 브랜드</h2><p>검증된 자재/시스템으로 함께합니다.</p></div>
+      <div class="ticker">
+        <div class="track">
+          <img src="/logos/영림.png" alt="영림"/>
+          <img src="logos/hanssem.png" alt="한샘"/>
+          <img src="/logos/예림.png" alt="예림"/>
+          <img src="logos/samsung.png" alt="삼성"/>
+          <img src="/logos/daelim.png" alt="대림"/>
+          <img src="/logos/corning.png" alt="Corning"/>
+          <!-- duplicate for seamless loop -->
+          <img src="/logos/lg.png" alt="LG하우시스"/>
+          <img src="/logos/kcc.png" alt="KCC"/>
+          <img src="/logos/samsung.png" alt="삼성"/>
+          <img src="/logos/daelim.png" alt="대림"/>
+          <img src="/logos/corning.png" alt="Corning"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing">
+    <div class="container">
+      <div class="section-h"><h2>예산 & 기간 가이드</h2><p>프로젝트 특성에 따라 변동될 수 있는 평균 범위입니다.</p></div>
+      <table>
+        <tr><th>공간</th><th>면적</th><th>예산 범위</th><th>평균 기간</th></tr>
+        <tr><td>아파트 전체</td><td>25~33평</td><td>10,000~15,000만원</td><td>3~5주</td></tr>
+        <tr><td>카페 인테리어(상업시설)</td><td>10~20평</td><td>5,000~10,000만원</td><td>2~4주</td></tr>
+        <tr><td>사무실</td><td>20~40평</td><td>6,000~15,000만원</td><td>3~5주</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section id="process">
+    <div class="container">
+      <div class="section-h">
+        <h2>진행 절차</h2>
+        <p>처음 상담부터 준공까지 모든 과정을 투명하게 안내합니다.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h4>1) 상담 & 현장실측</h4>
+          <p>요구사항 파악, 예산/일정 협의, 현장 실측으로 출발선 정리</p>
+        </div>
+        <div class="step">
+          <h4>2) 설계 & 견적</h4>
+          <p>평면/3D 제안 및 마감재 확정, 세부 견적 산출</p>
+        </div>
+        <div class="step">
+          <h4>3) 시공 관리</h4>
+          <p>일정표 공유, 품질 체크리스트 운영, 중간 검수</p>
+        </div>
+        <div class="step">
+          <h4>4) 준공 & A/S</h4>
+          <p>최종 검수 후 인계, 하자 보수 및 유지관리</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-h"><h2>자주 묻는 질문</h2><p>계약 전 꼭 확인하세요.</p></div>
+      <details><summary>하자 A/S는 어떻게 진행되나요?</summary><p>준공 후 1년 무상 보증을 제공합니다. 접수 후 3영업일 내 1차 조치 일정을 안내드립니다.</p></details>
+      <details><summary>공정 진행상황은 어떻게 공유되나요?</summary><p>주 2회 공정 리포트(사진 포함)를 카카오톡/이메일로 공유합니다.</p></details>
+      <details><summary>작업 시간과 소음/민원 관리는 어떻게 하나요?</summary><p>관리규정 준수, 소음/먼지 최소화 장비 사용, 공지문 부착 등 표준 매뉴얼을 따릅니다.</p></details>
+      <details><summary>폐기물 처리와 청소는 포함인가요?</summary><p>철거 폐기물 처리와 준공 청소를 기본 포함합니다(특수 폐기물은 별도).</p></details>
+    </div>
+  </section>
+
+  <!-- 상담 팝업 (빠른 상담) -->
+  <div id="consultModal" aria-hidden="true" role="dialog" aria-labelledby="consultTitle" style="position:fixed;inset:0;display:none">
+    <div id="consultOverlay" style="position:absolute;inset:0;background:rgba(0,0,0,.35)"></div>
+    <div role="document" style="position:relative;max-width:560px;margin:6vh auto;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.2)">
+      <div style="padding:18px 18px 0">
+        <h3 id="consultTitle" style="margin:0 0 6px;color:#0078ff">빠른 상담 신청</h3>
+        <p style="margin:0 0 10px;color:#556171;font-size:14px">연락처를 남겨주시면 담당자가 곧 연락드려요.</p>
+      </div>
+      <form id="quickForm" style="padding:0 18px 18px;display:grid;gap:12px">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <input name="name" placeholder="성함" required />
+          <input name="phone" type="tel" placeholder="연락처" required />
+        </div>
+        <input name="type" placeholder="공간 유형 (아파트/카페/오피스 등)" />
+        <textarea name="message" placeholder="원하시는 분위기/예산/일정 등을 간단히 적어주세요" style="min-height:110px"></textarea>
+        <label style="display:flex;gap:8px;align-items:center;font-size:13px;color:#556171">
+          <input type="checkbox" required style="width:16px;height:16px"> 개인정보 수집 및 이용에 동의합니다.
+        </label>
+        <div style="display:flex;gap:8px;align-items:center">
+          <button class="btn primary" type="submit" style="border:none">신청하기</button>
+          <a href="tel:02-000-0000" class="btn" style="background:#f7f9fb">전화 상담</a>
+          <button type="button" id="consultClose" class="btn" aria-label="닫기">닫기</button>
+        </div>
+        <small id="quickResult" style="color:#556171"></small>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">© <span id="year"></span> 백송홀딩스 · All rights reserved · <a href="privacy.htm">개인정보 처리방침</a> · <a href="terms.html">이용약관</a><br><small style="display:block;margin-top:6px;color:var(--muted)">사업자등록번호: 143-85-08854 · 대표: 송영석 · 주소: 성남시 분당구 장미로 48번길 10 </small></div>
+  </footer>
+
+  <!-- Floating CTA Buttons -->
+  <div id="floatCTA" aria-label="빠른 상담 퀵버튼">
+    <button class="fab" data-open-modal>상담하기</button>
+  </div>
+
+  <!-- 모바일 고정 CTA 바 -->
+  <div class="sticky-cta" role="region" aria-label="빠른 상담 연락 방법">
+    <a href="#" data-open-modal>빠른 상담</a>
+    <a href="tel:02-000-0000">전화하기</a>
+    <a href="https://pf.kakao.com/_YOURID" target="_blank" rel="noopener">카카오 상담</a>
+  </div>
+
+  <script>
+    const drawer = document.getElementById('drawer');
+    const hamburger = document.getElementById('hamburger');
+    function toggleDrawer(force){
+      const show = force ?? drawer.style.display === 'none';
+      drawer.style.display = show ? 'block' : 'none';
+    }
+    if(hamburger){ hamburger.addEventListener('click', ()=> toggleDrawer()); }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // 상담 팝업 제어
+    const modal = document.getElementById('consultModal');
+    const overlay = document.getElementById('consultOverlay');
+    const closeBtn = document.getElementById('consultClose');
+    const openers = document.querySelectorAll('[data-open-modal]');
+
+    function openModal(){ modal.style.display = 'block'; modal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
+    function closeModal(){ modal.style.display = 'none'; modal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+
+    openers.forEach(el=> el.addEventListener('click', (e)=>{ e.preventDefault(); openModal(); }));
+    overlay.addEventListener('click', closeModal);
+    closeBtn.addEventListener('click', closeModal);
+    window.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeModal(); });
+
+    // 빠른 상담 폼(데모) — 실제 전송로직으로 교체하세요
+    document.getElementById('quickForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(e.target).entries());
+      console.log('빠른 상담 접수:', data);
+      document.getElementById('quickResult').textContent = '접수 완료! 담당자가 곧 연락드립니다.';
+      e.target.reset();
+      setTimeout(closeModal, 900);
+    });
+
+    // 전후 비교 슬라이더
+    document.querySelectorAll('.before-after').forEach(box=>{
+      const before = box.querySelector('img.before');
+      const range = box.querySelector('input[type=range]');
+      if(range && before){
+        range.addEventListener('input', e=>{
+          const v = e.target.value; // 0~100
+          before.style.clipPath = `inset(0 ${100 - v}% 0 0)`;
+        });
+      }
+    });
+  </script>
+  <script>
+    // ========= 인터랙션 · 동적 기능 추가 =========
+    const throttle=(fn,wait=100)=>{let t=0;return(...a)=>{const n=Date.now();if(n-t>=wait){t=n;fn(...a);}}};
+    const debounce=(fn,wait=200)=>{let id;return(...a)=>{clearTimeout(id);id=setTimeout(()=>fn(...a),wait)};};
+
+    // 스무스 스크롤(내부 앵커)
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const id=a.getAttribute('href');
+        if(id.length>1 && document.querySelector(id)){
+          e.preventDefault();
+          document.querySelector(id).scrollIntoView({behavior:'smooth',block:'start'});
+          history.replaceState(null,'',id);
+          try{ if(typeof closeModal==='function') closeModal(); }catch(_){ }
+        }
+      });
+    });
+
+    // 섹션 하이라이트 (현재 메뉴 강조)
+    const sections=[...document.querySelectorAll('section[id]')];
+    const menuLinks=[...document.querySelectorAll('nav.menu a[href^="#"]')];
+    const setActive=()=>{
+      const y=window.scrollY+120; let current=null;
+      for(const s of sections){ if(s.offsetTop<=y) current=s.id; }
+      menuLinks.forEach(l=>{
+        const on = l.getAttribute('href')==='#'+current;
+        l.style.fontWeight= on? '700':'400';
+        l.style.color = on? 'var(--brand)':'inherit';
+      })
+    };
+    setActive();
+    window.addEventListener('scroll', throttle(setActive,100));
+
+    // 스크롤 리빌
+    const io=new IntersectionObserver((ents)=>{
+      ents.forEach(e=>{
+        if(e.isIntersecting){ e.target.animate([
+          {opacity:0, transform:'translateY(10px)'},
+          {opacity:1, transform:'translateY(0)'}
+        ],{duration:420, easing:'cubic-bezier(.2,.7,.2,1)', fill:'forwards'});
+        io.unobserve(e.target);
+        }
+      })
+    },{threshold:.12, rootMargin:'0px 0px -5% 0px'});
+    document.querySelectorAll('.card,.tile,.step').forEach(el=>{el.style.opacity=.001; io.observe(el)});
+
+    // 스탯 카운트업
+    document.querySelectorAll('.stat b').forEach(el=>{
+      const num=parseFloat(el.textContent.replace(/[^0-9.]/g,''));
+      if(isNaN(num)) return;
+      const isScore = /\//.test(el.textContent);
+      const max = isScore? 5: num; const end = num;
+      let cur=0; const dur=900; const start=performance.now();
+      const step=(t)=>{ const p=Math.min(1,(t-start)/dur); cur=end*p;
+        el.textContent = isScore? cur.toFixed(1)+"/"+max : Math.round(cur).toString();
+        if(p<1) requestAnimationFrame(step);
+      }; requestAnimationFrame(step);
+    });
+
+    // 포트폴리오 필터(키워드 기반)
+    (function(){
+      const sec=document.querySelector('#portfolio .container');
+      const grid=document.querySelector('#portfolio .grid');
+      if(!sec||!grid) return;
+      const bar=document.createElement('div');
+      bar.style.display='flex'; bar.style.gap='8px'; bar.style.margin='12px 0 18px';
+      const cats=['전체','주거','상업','오피스'];
+      cats.forEach(c=>{
+        const b=document.createElement('button'); b.textContent=c; b.className='btn'; b.style.padding='8px 12px';
+        if(c==='전체'){ b.classList.add('primary'); b.style.border='none'; }
+        b.addEventListener('click',()=>{
+          [...bar.querySelectorAll('button')].forEach(x=>{x.classList.remove('primary'); x.style.border='1px solid rgba(0,0,0,.1)';});
+          b.classList.add('primary'); b.style.border='none';
+          const tiles=[...grid.querySelectorAll('.tile')];
+          tiles.forEach(t=>{
+            const cap=t.querySelector('.caption')?.textContent||'';
+            const show = c==='전체' || cap.includes(c);
+            t.style.display = show? 'block':'none';
+          });
+        });
+        bar.appendChild(b);
+      });
+      sec.insertBefore(bar, grid);
+    })();
+
+    // 지연 로딩 기본값 적용
+    document.querySelectorAll('img').forEach(img=>{ img.loading = img.loading||'lazy'; });
+
+    // 폼 유효성 검사(간단)
+    const phoneRE=/^[0-9\-\+\s]{7,20}$/;
+    document.getElementById('quickForm')?.addEventListener('submit',function(e){
+      const f=e.target; const name=f.name.value.trim(); const phone=f.phone.value.trim();
+      if(name.length<2){ alert('성함을 정확히 입력해주세요.'); e.preventDefault(); return; }
+      if(!phoneRE.test(phone)){ alert('연락처 형식을 확인해주세요.'); e.preventDefault(); return; }
+    });
+    // ===== 라이트박스(클릭 확대) =====
+  (function(){
+    const tiles=[...document.querySelectorAll('#portfolio .tile')];
+    if(!tiles.length) return;
+
+    // Lightbox DOM 생성
+    const lb=document.createElement('div'); lb.className='lightbox'; lb.setAttribute('role','dialog'); lb.setAttribute('aria-modal','true');
+    lb.innerHTML=`<div class="lightbox-inner"><button class="lb-close" aria-label="닫기">✕</button><div class="lb-nav"><button class="lb-prev" aria-label="이전">⟨</button><button class="lb-next" aria-label="다음">⟩</button></div><img alt="확대 이미지"/><div class="lb-caption"></div></div>`;
+    document.body.appendChild(lb);
+    const imgEl=lb.querySelector('img');
+    const capEl=lb.querySelector('.lb-caption');
+    const btnClose=lb.querySelector('.lb-close');
+    const btnPrev=lb.querySelector('.lb-prev');
+    const btnNext=lb.querySelector('.lb-next');
+
+    // 갤러리 아이템 구성: 각 타일에서 대표 이미지를 찾음
+    const items=tiles.map(t=>{
+      // before-after가 있으면 after 이미지를 사용
+      const after=t.querySelector('img.after');
+      const any=t.querySelector('img');
+      const src= (after||any)?.getAttribute('src') || null;
+      const cap=t.querySelector('.caption')?.textContent?.trim() || '';
+      return {el:t, src, cap};
+    }).filter(x=>!!x.src);
+
+    let index=-1;
+    const open=i=>{
+      index=(i+items.length)%items.length;
+      const it=items[index];
+      imgEl.style.opacity='0';
+      imgEl.onload=()=>{imgEl.animate([{opacity:0},{opacity:1}],{duration:220,fill:'forwards'});};
+      imgEl.src=it.src; capEl.textContent=it.cap;
+      lb.classList.add('open');
+      document.body.style.overflow='hidden';
+    };
+    const close=()=>{ lb.classList.remove('open'); document.body.style.overflow=''; };
+    const prev=()=>open(index-1);
+    const next=()=>open(index+1);
+
+    // 타일 클릭 이벤트
+    items.forEach((it,i)=>{
+      it.el.style.cursor='zoom-in';
+      it.el.addEventListener('click',e=>{
+        // range 입력 드래그 시는 무시
+        if(e.target.matches('input[type=range]')) return;
+        open(i);
+      });
+    });
+
+    // 컨트롤
+    btnClose.addEventListener('click',close);
+    btnPrev.addEventListener('click',prev);
+    btnNext.addEventListener('click',next);
+    lb.addEventListener('click',e=>{ if(e.target===lb) close(); });
+
+    // 키보드
+    window.addEventListener('keydown',e=>{
+      if(!lb.classList.contains('open')) return;
+      if(e.key==='Escape') close();
+      if(e.key==='ArrowLeft') prev();
+      if(e.key==='ArrowRight') next();
+    });
+
+    // 스와이프(모바일)
+    let sx=0, sy=0;
+    imgEl.addEventListener('touchstart',e=>{sx=e.touches[0].clientX; sy=e.touches[0].clientY;});
+    imgEl.addEventListener('touchend',e=>{
+      const dx=e.changedTouches[0].clientX - sx; const dy=e.changedTouches[0].clientY - sy;
+      if(Math.abs(dx)>40 && Math.abs(dy)<60){ dx>0 ? prev() : next(); }
+    });
+  })();
+  // ===== Hero Parallax (scroll speed) =====
+  const px = document.querySelectorAll('[data-parallax-speed]');
+  window.addEventListener('scroll', ()=>{
+    const y=window.scrollY;
+    px.forEach(el=>{
+      const speed=parseFloat(el.getAttribute('data-parallax-speed'))||0.5;
+      el.style.transform=`translate3d(0, ${y*speed*-0.2}px, 0)`;
+    });
+  });
+
+  // ===== Testimonials slider =====
+  (function(){
+    const slides=document.getElementById('tslides'); if(!slides) return;
+    const total=slides.children.length; let i=0;
+    const go=(n)=>{ i=(n+total)%total; slides.style.transform=`translateX(${-i*100}%)`; };
+    document.getElementById('tprev').addEventListener('click',()=>go(i-1));
+    document.getElementById('tnext').addEventListener('click',()=>go(i+1));
+    let auto=setInterval(()=>go(i+1), 4000);
+    slides.addEventListener('mouseenter',()=>clearInterval(auto));
+    slides.addEventListener('mouseleave',()=>auto=setInterval(()=>go(i+1), 4000));
+  })();
+
+  // ===== Staggered reveal (기존 리빌에 딜레이 추가) =====
+  (function(){
+    const els=[...document.querySelectorAll('.card,.tile,.step')];
+    els.forEach((el,idx)=>{ el.style.opacity=.001; el.style.setProperty('--d', (idx%6)*60+'ms'); });
+    const io2=new IntersectionObserver((ents)=>{
+      ents.forEach(e=>{ if(e.isIntersecting){ e.target.animate([
+        {opacity:0, transform:'translateY(10px)'},
+        {opacity:1, transform:'translateY(0)'}
+      ],{duration:460, delay:parseInt(e.target.style.getPropertyValue('--d'))||0, easing:'cubic-bezier(.2,.7,.2,1)', fill:'forwards'}); io2.unobserve(e.target);} });
+    },{threshold:.12});
+    els.forEach(el=>io2.observe(el));
+  })();
+
+  // ===== Timed/scroll popup suggestion =====
+  (function(){
+    let hinted=false; const openers=document.querySelectorAll('[data-open-modal]');
+    function tryOpen(){ if(hinted) return; hinted=true; openers[0]?.dispatchEvent(new Event('click',{bubbles:true})); }
+    setTimeout(tryOpen, 20000); // 20초 후 제안
+    window.addEventListener('scroll', ()=>{
+      const scrolled = (window.scrollY)/(document.body.scrollHeight - window.innerHeight);
+      if(scrolled>0.5) tryOpen();
+    });
+  })();
+
+  // ===== Phone copy to clipboard =====
+  (function(){
+    const btn=document.getElementById('copyPhone'); const toast=document.getElementById('toast');
+    if(!btn) return; btn.addEventListener('click', async ()=>{
+      const num=btn.dataset.phone||''; try{ await navigator.clipboard.writeText(num); }catch(_){
+        const t=document.createElement('textarea'); t.value=num; document.body.appendChild(t); t.select(); document.execCommand('copy'); t.remove();
+      }
+      toast.style.display='block'; toast.animate([{opacity:0, transform:'translateY(10px)'},{opacity:1, transform:'translateY(0)'}],{duration:200,fill:'forwards'});
+      setTimeout(()=>{ toast.animate([{opacity:1},{opacity:0}],{duration:250,fill:'forwards'}).onfinish=()=>toast.style.display='none'; },1500);
+    });
+  })();
+
+  // ===== Mouse parallax tilt on tiles =====
+  (function(){
+    document.querySelectorAll('#portfolio .tile').forEach(tile=>{
+      tile.classList.add('parallax-tilt');
+      tile.addEventListener('mousemove', (e)=>{
+        const r=tile.getBoundingClientRect();
+        const rx=(e.clientY - r.top - r.height/2)/r.height;
+        const ry=(e.clientX - r.left - r.width/2)/r.width;
+        tile.style.transform=`rotateX(${(-rx*6).toFixed(2)}deg) rotateY(${(ry*6).toFixed(2)}deg)`;
+      });
+      tile.addEventListener('mouseleave', ()=>{ tile.style.transform='rotateX(0) rotateY(0)'; });
+    });
+  })();
+  // Header shadow on scroll
+  (function(){
+    const h=document.querySelector('header');
+    const on=()=>{ if(window.scrollY>8) h.classList.add('scrolled'); else h.classList.remove('scrolled'); };
+    on(); window.addEventListener('scroll', on, {passive:true});
+  })();
+  // ===== Scroll progress bar =====
+  (function(){
+    const bar=document.getElementById('scrollbar');
+    const on=()=>{
+      const h=document.documentElement; const p = (h.scrollTop)/(h.scrollHeight - h.clientHeight); bar.style.width=(p*100).toFixed(2)+'%';
+    };
+    on(); window.addEventListener('scroll', on, {passive:true});
+  })();
+
+  // ===== Spotlight follows cursor over hero =====
+  (function(){
+    const hero=document.querySelector('.hero'); const sp=document.getElementById('spotlight'); if(!hero||!sp) return;
+    hero.addEventListener('mousemove', (e)=>{
+      const r=hero.getBoundingClientRect();
+      const x=(e.clientX - r.left)/r.width*100; const y=(e.clientY - r.top)/r.height*100;
+      sp.style.background=`radial-gradient(220px 220px at ${x}% ${r.top + window.scrollY + e.clientY - r.top < 0 ? 20 : y}%, rgba(255,255,255,.35), transparent 70%)`;
+    });
+  })();
+
+  // ===== Magnetic buttons (CTA, primary, floating) =====
+  (function(){
+    const mags=[...document.querySelectorAll('.btn.primary, .cta, #floatCTA .fab')];
+    mags.forEach(el=>{
+      el.classList.add('magnetic');
+      el.addEventListener('mousemove', (e)=>{
+        const r=el.getBoundingClientRect();
+        const dx=(e.clientX - (r.left + r.width/2))/r.width; // -0.5~0.5
+        const dy=(e.clientY - (r.top + r.height/2))/r.height;
+        el.style.transform=`translate(${dx*8}px, ${dy*8}px)`;
+      });
+      el.addEventListener('mouseleave', ()=>{ el.style.transform='translate(0,0)'; });
+    });
+  })();
+</script>
+</body>
+</html>
